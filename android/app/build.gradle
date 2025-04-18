@@ -57,7 +57,7 @@ react {
 /**
  * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
  */
-def enableProguardInReleaseBuilds = false
+def enableProguardInReleaseBuilds = true
 
 /**
  * The preferred build flavor of JavaScriptCore (JSC)
@@ -77,9 +77,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.fxstuffhub"
+    namespace "com.StaffHub"
     defaultConfig {
-        applicationId "com.fxstuffhub"
+        applicationId "com.StaffHub"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -87,9 +87,9 @@ android {
     }
     signingConfigs {
         debug {
-            storeFile file('debug.keystore')
+            storeFile file('fxstaffhub-release-key.keystore')
             storePassword 'android'
-            keyAlias 'androiddebugkey'
+            keyAlias 'fxstaffhub-key'
             keyPassword 'android'
         }
     }
@@ -117,3 +117,4 @@ dependencies {
         implementation jscFlavor
     }
 }
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")

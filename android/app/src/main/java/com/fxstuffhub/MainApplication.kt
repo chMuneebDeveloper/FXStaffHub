@@ -1,4 +1,4 @@
-package com.fxstuffhub
+package com.StaffHub
 
 import android.app.Application
 import com.facebook.react.PackageList
